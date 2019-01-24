@@ -1,0 +1,102 @@
+body {
+    font-family: 'Lato', system-ui;
+    margin: 0;
+    height: 100vh;
+    background: #dedede;
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    grid-template-areas: "information simon-says";
+}
+
+.information {
+    grid-area: information;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    padding: 1em;
+}
+
+.simonSays {
+    grid-area: simon-says;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.simonSays .gameBoard {
+    height: 60vh;
+    width: 60vh;
+    border-radius: 50%;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    position: relative;
+}
+.simonSays .gameBoard .btn-start {
+    cursor: pointer;
+    width: 420px;
+    height: 100px;
+    background: #ecf0f1;
+    color: #2c3e50;
+    border: none;
+    border-bottom: 4px solid #c4c6c7;
+    border-radius: 8px;
+    font-size: 3em;
+    position: absolute;
+    top: calc(50% - 50px);
+    left: calc(50% - 210px);
+    transition: .5s;
+    outline: none;
+}
+.simonSays .gameBoard .btn-start:hover {
+    color: #ecf0f1;
+    background: #2c3e50;
+    border-bottom: 4px solid #1f3346;
+}
+.simonSays .gameBoard .btn-start:active {
+    transform: scale(.95);
+}
+
+.celeste {
+    background: #22a6b3;
+}
+.celeste.light {
+    background: #7ed6df;
+}
+.violeta {
+    background: #be2edd;
+}
+.violeta.light {
+    background: #e056fd;
+}
+.naranja {
+    background: #f0932b;
+}
+.naranja.light {
+    background: #ffbe76;
+}
+.verde {
+    background: #6ab04c;
+}
+.verde.light {
+    background: #badc58;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        display: block;
+    }
+    to {
+        display: none;
+        opacity: 0;
+    }
+}
+
+.hide {
+    animation-duration: 0.7s;
+    animation-fill-mode: both;
+    animation-name: fadeOut;
+    visibility: hidden;
+}
+
